@@ -1,0 +1,24 @@
+﻿@model MVCApp.Models.Song
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Song</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.SId"> <value ="Edit" class="btn btn-info rounded-pill">Edit</a> |
+    <a asp-action="Index"><button class="btn btn-warning rounded-pill" type="button">Back to List</button></a>
+</div>

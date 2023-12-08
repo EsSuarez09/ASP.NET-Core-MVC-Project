@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MVCApp.Models.Song>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    
+    <a asp-action="Create"><button class="btn btn-success rounded-pill px-3" type="button">Create New</button></a>
+</p>
+<table class=" table table-bordered table-striped">
+    
+
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody >
+@foreach (var item in Model) {
+        <tr>
+            <td class="col-md-6">
+                @Html.DisplayFor(modelItem => item.SName)
+            </td>
+            <td class="col-md-6">
+                <a asp-action="Edit" asp-route-id="@item.SId"> <value="Edit" class="btn btn-info rounded-pill mx-2">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.SId"> <value ="List" class="btn btn-warning rounded-pill mx-2">List</a>
+                    <a asp-action="Delete" asp-route-id="@item.SId"> <value ="Delete" class="btn btn-danger rounded-pill mx-2">Delete</a>
+                   
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
